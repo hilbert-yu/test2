@@ -24,11 +24,12 @@ import com.example.fit5046_a3.screens.Statistics
 import com.example.fit5046_a3.screens.ViewWorkouts
 import com.example.fit5046_a3.screens.WorkoutMap
 import com.example.fit5046_a3.viewmodel.UserViewModel
+import com.example.fit5046_a3.viewmodel.WorkoutViewModel
 import kotlinx.coroutines.launch
 
 
 @Composable
-fun MainNavigation (navViewModel: NavigationViewModel) {
+fun MainNavigation (navViewModel: NavigationViewModel, workoutViewModel: WorkoutViewModel) {
     val userViewModel: UserViewModel = viewModel()
     val navController = rememberNavController()
     val coroutineScope = rememberCoroutineScope()
@@ -64,7 +65,7 @@ fun MainNavigation (navViewModel: NavigationViewModel) {
                 ViewWorkouts(drawerState)
             }
             composable(Routes.LogWorkout.value) {
-                LogWorkout(drawerState)
+                LogWorkout(drawerState, workoutViewModel)
             }
             composable(Routes.WorkoutMap.value) {
                 WorkoutMap(drawerState)

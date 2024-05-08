@@ -22,13 +22,14 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.example.fit5046_a3.screens_2.LogWorkoutScreen
+import com.example.fit5046_a3.viewmodel.WorkoutViewModel
 import kotlinx.coroutines.launch
 
 
 @RequiresApi(Build.VERSION_CODES.O)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LogWorkout(drawerState: DrawerState) {
+fun LogWorkout(drawerState: DrawerState, workoutViewModel : WorkoutViewModel) {
     Scaffold(
         topBar = {
             val coroutineScope = rememberCoroutineScope()
@@ -61,7 +62,7 @@ fun LogWorkout(drawerState: DrawerState) {
 //                Spacer(modifier = Modifier.size(30.dp))
 //                Text("This app was created as part of FIT5046 exercise ",
 //                    style = MaterialTheme.typography.bodyLarge)
-                LogWorkoutScreen(1)
+                LogWorkoutScreen(1, workoutViewModel)
             }
         }
     }

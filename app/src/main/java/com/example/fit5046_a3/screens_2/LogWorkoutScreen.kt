@@ -40,7 +40,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.fit5046_a3.model.Workout
 import com.example.fit5046_a3.viewmodel.WorkoutViewModel
 import java.text.SimpleDateFormat
@@ -51,9 +50,9 @@ import java.util.Locale
 @OptIn(ExperimentalMaterial3Api::class)
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun LogWorkoutScreen(userId: Long) {
+fun LogWorkoutScreen(userId: Long, workoutViewModel : WorkoutViewModel) {
     // Access the WorkoutViewModel
-    val workoutViewModel: WorkoutViewModel = viewModel()
+    // val workoutViewModel: WorkoutViewModel = viewModel()
 
     // Sample workout types
     val workoutTypes = listOf(

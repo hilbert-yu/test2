@@ -57,10 +57,12 @@ import androidx.compose.ui.Modifier
 import com.example.fit5046_a3.navigation.MainNavigation
 import com.example.fit5046_a3.navigation.NavigationViewModel
 import com.example.fit5046_a3.ui.theme.FIT5046_A3Theme
+import com.example.fit5046_a3.viewmodel.WorkoutViewModel
 
 class MainActivity : ComponentActivity() {
 
     private val viewModel1: NavigationViewModel by viewModels()
+    private val viewModel2: WorkoutViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -70,7 +72,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainNavigation(navViewModel = viewModel1)
+                    MainNavigation(navViewModel = viewModel1, workoutViewModel = viewModel2)
                 }
             }
         }
